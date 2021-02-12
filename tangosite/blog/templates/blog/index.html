@@ -1,5 +1,13 @@
-{% for post in posts  %}
-    {{post.title}}
+{% extends 'blog/base.html' %}
+{% load static  %}
+{% block title %}My blog{% endblock %}
+{% block intro %}
+<div class="intro">
+    <div class="container">
+        <div class="intro_inner">
+            <h1 class="intro_title">Welcome the ranch</h1>
+        </div>
+    </div>
+</div>
 
-
-{% endfor %}
+{%endblock%}
