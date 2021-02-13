@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
-
+from .settings_local import *
+from tangosite import settings_local
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -77,12 +78,11 @@ WSGI_APPLICATION = 'tangosite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'rango_db',
-        'USER': 'jew',
-        'PASSWORD': 'jew130',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': settings_local.DATABASES['default']['ENGINE'],
+        'NAME': settings_local.DATABASES['default']['NAME'],
+        'USER': settings_local.DATABASES['default']['USER'],
+        'PASSWORD': settings_local.DATABASES['default']['PASSWORD'],
+        'HOST': settings_local.DATABASES['default']['HOST'],
     }
 }
 
@@ -129,8 +129,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'bayramaly113@gmail.com'
-EMAIL_HOST_PASSWORD = 'bayramaly113bayramaly113'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+EMAIL_HOST = settings_local.EMAIL_HOST
+EMAIL_HOST_USER = settings_local.EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = settings_local.EMAIL_HOST_PASSWORD
+EMAIL_PORT = settings_local.EMAIL_PORT
+EMAIL_USE_TLS = settings_local.EMAIL_USE_TLS
