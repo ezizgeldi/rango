@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'taggit',
+    'pages.apps.PagesConfig'
 ]
 
 MIDDLEWARE = [
@@ -129,8 +130,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-EMAIL_HOST = settings_local.EMAIL_HOST
-EMAIL_HOST_USER = settings_local.EMAIL_HOST_USER
-EMAIL_HOST_PASSWORD = settings_local.EMAIL_HOST_PASSWORD
-EMAIL_PORT = settings_local.EMAIL_PORT
-EMAIL_USE_TLS = settings_local.EMAIL_USE_TLS
+# EMAIL_HOST = settings_local.EMAIL_HOST
+# EMAIL_HOST_USER = settings_local.EMAIL_HOST_USER
+# EMAIL_HOST_PASSWORD = settings_local.EMAIL_HOST_PASSWORD
+# EMAIL_PORT = settings_local.EMAIL_PORT
+# EMAIL_USE_TLS = settings_local.EMAIL_USE_TLS
